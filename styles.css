@@ -1,0 +1,429 @@
+/* Index header Style */
+
+/* Style the header with a grey background and some padding */
+.header {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 5px 2.5px;
+}
+
+/* Style the header links */
+.header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and
+font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Style the active/current link*/
+.header a.active {
+    background-color: dodgerblue;
+    color: white;
+}
+
+/* Float the link section to the right */
+.header-right {
+    float: right;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide
+ or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+    .header a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .header-right {
+        float: none;
+    }
+}
+
+
+/*  Window Section  */
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.full-height {
+    height: 100%;
+    background: rgb(251, 247, 241);
+}
+
+.asdf1 {
+    height: 100%;
+    /* background: rgb(1, 181, 236); */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#p1{
+    text-align: center;
+}
+
+.asdf2 {
+    height: 100%;
+    background: rgb(251, 247, 241);
+}
+
+.asdf3 {
+    height: 100%;
+    /* background: rgb(1, 181, 236); */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: justify;
+    background-image: url(cam.jpg);
+}
+
+.asdf4 {
+    height: 100%;
+    background: rgb(251, 247, 241);
+}
+
+.asdf5 {
+    height: 100%;
+    /* background: rgb(1, 181, 236); */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.asdf6 {
+    height: 92%;
+    background: rgb(251, 247, 241);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+
+.left1 {
+    float: left;
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+}
+
+.right1 {
+    float: right;
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+
+}
+
+
+.left2 {
+    float: left;
+    width: 50%;
+    height: 100%;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed;   */
+    background-size: cover;
+
+
+}
+
+.right2 {
+    float: right;
+    width: 50%;
+    height: 100%;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed;   */
+    background-size: cover;
+
+
+}
+
+.cer1 {
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+.cer2 {
+    float: right;
+    width: 50%;
+    height: auto;
+
+}
+
+/* Certificate Image Gallery */
+
+
+
+/* Style for the logo link of the links */
+.fa {
+    padding: 10px;
+    font-size: 20px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+.fa-github {
+    background: #060505;
+    color: white;
+}
+
+.fa-instagram {
+    background: #e40f24;
+    color: white;
+
+}
+
+.spacing {
+    line-height: 4px;
+}
+
+.image {
+    margin-bottom: 30px;
+    align-self: center;
+    padding: auto;
+
+}
+
+/* Font Structure */
+h1 {
+    font-style: italic;
+    /* color: rgb(134, 63, 220); */
+    text-align: center;
+    font-size: 30px;
+}
+
+h2 {
+    color: navy;
+    text-align: center;
+}
+h3{
+    text-align: center;
+    color: blueviolet;
+}
+
+
+
+/* Section CSS */
+
+#a1 {
+    /* padding: 220px; */
+    text-align: justify;
+    border-radius: 25px;
+    background-color: skyblue;
+    border: 2px solid #3bb133;
+    padding: 30px;
+    width: 50%;
+    height: auto;
+    margin: 10%;
+    margin-left: 22%;
+    opacity: 0.6;
+    
+}
+
+#a1 p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2.5%;
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 2.5%;
+    /* color: navy; */
+
+
+}
+
+#b1 {
+    text-align: justify;
+    clear: both;
+}
+
+#bor1 {
+    border-radius: 15px 50px;
+    background: #04a5a5;
+    padding: 30px;
+    width: 25%;
+    height: 40%;
+    margin-left: 4%;
+    margin-top: 80px;
+}
+
+#bor2 {
+    border-radius: 15px 50px;
+    background: #04a5a5;
+    /*008080*/
+    padding: 30px;
+    width: 25%;
+    height: 40%;
+    /* margin-left: 5%; */
+    margin-right: 4%;
+    margin-top: 80px;
+}
+
+#bor3 {
+    border-radius: 15px / 50px;
+    background: #BEB7DF;
+    padding: 20px;
+    width: 80%;
+    height: 200px;
+    margin-left: 5%;
+    padding: 5%;
+    margin-top: 10%;
+    opacity: 0.9;
+}
+
+#bor4 {
+    border-radius: 20px / 50px;
+    background: #c9ddff;
+    padding: 20px;
+    width: 40%;
+    height: auto;
+    margin-left: 15%;
+    padding: 5%;
+    margin-top: 20%;
+    text-size-adjust: 20px;
+    opacity: 0.8;
+}
+
+
+/* Table Layout css */
+
+
+
+/* Project Gallary */
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+
+/* projects container */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1%;
+    margin-top: 5%;
+    height: 60%;
+    width: auto;
+    /* border: 2px solid black; */
+}
+
+.box {
+    width: 80%;
+    height: 80%;
+    /* border: 2px solid rgb(234, 145, 160); */
+    margin: 5%;
+    border-radius: 30px;
+    background-color: #04a5a5;
+    text-align: center;
+}
+
+.box p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10%;
+    font-weight: 800;
+    font-size: 32px;
+    margin-top: 40%;
+    color: white;
+
+
+
+}
+
+.box1 {
+    width: 40%;
+    height: auto;
+    /* border: 2px solid rgb(234, 145, 160); */
+    margin: 3%;
+    border-radius: 30px;
+    background-color: #80ed99;
+    opacity: 0.8;
+    text-align: justify;
+}
+
+/* Education Detial's Table */
+table,
+th,
+td {
+    border: 2px solid black;
+    border-radius: 10px;
+    border-style: outset;
+    background-color: #D6EEEE;
+    text-align: center;
+    border-spacing: 5px;
+    padding: 5px;
+    margin-left: 10%;
+    margin-top: 20%;
+}
+
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2px;
+    background-color: #bbcc;
+    color: white;
+}
