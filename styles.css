@@ -1,13 +1,39 @@
-/* Index header Style */
+/* ===== Base Styles ===== */
+html, body {
+    height: 100%;
+    margin: 0;
+}
 
-/* Style the header with a grey background and some padding */
+/* ===== Typography ===== */
+h1 {
+    font-style: italic;
+    text-align: center;
+    font-size: 30px;
+}
+
+h2 {
+    color: navy;
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    color: blueviolet;
+}
+
+/* ===== Layout ===== */
+.full-height {
+    height: 100%;
+    background: rgb(251, 247, 241);
+}
+
+/* ===== Header Styles ===== */
 .header {
     overflow: hidden;
     background-color: #f1f1f1;
     padding: 5px 2.5px;
 }
 
-/* Style the header links */
 .header a {
     float: left;
     color: black;
@@ -19,68 +45,31 @@
     border-radius: 4px;
 }
 
-/* Style the logo link (notice that we set the same value of line-height and
-font-size to prevent the header to increase when the font gets bigger */
 .header a.logo {
     font-size: 25px;
     font-weight: bold;
 }
 
-/* Change the background color on mouse-over */
 .header a:hover {
     background-color: #ddd;
     color: black;
 }
 
-/* Style the active/current link*/
 .header a.active {
     background-color: dodgerblue;
     color: white;
 }
 
-/* Float the link section to the right */
 .header-right {
     float: right;
 }
 
-/* Add media queries for responsiveness - when the screen is 500px wide
- or less, stack the links on top of each other */
-@media screen and (max-width: 500px) {
-    .header a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-
-    .header-right {
-        float: none;
-    }
-}
-
-
-/*  Window Section  */
-
-html,
-body {
-    height: 100%;
-    margin: 0;
-}
-
-.full-height {
-    height: 100%;
-    background: rgb(251, 247, 241);
-}
-
+/* ===== Section Styles ===== */
 .asdf1 {
     height: 100%;
-    /* background: rgb(1, 181, 236); */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-}
-
-#p1{
-    text-align: center;
 }
 
 .asdf2 {
@@ -90,7 +79,6 @@ body {
 
 .asdf3 {
     height: 100%;
-    /* background: rgb(1, 181, 236); */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -105,7 +93,6 @@ body {
 
 .asdf5 {
     height: 100%;
-    /* background: rgb(1, 181, 236); */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -117,47 +104,29 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-
 }
 
-.left1 {
+/* ===== Two Column Layouts ===== */
+.left1, .left2 {
     float: left;
     width: 50%;
     height: 100%;
     background-size: cover;
 }
 
-.right1 {
+.right1, .right2 {
     float: right;
     width: 50%;
     height: 100%;
     background-size: cover;
-
 }
 
-
-.left2 {
-    float: left;
-    width: 50%;
-    height: 100%;
+.left2, .right2 {
     background-repeat: no-repeat;
-    /* background-attachment: fixed;   */
     background-size: cover;
-
-
 }
 
-.right2 {
-    float: right;
-    width: 50%;
-    height: 100%;
-    background-repeat: no-repeat;
-    /* background-attachment: fixed;   */
-    background-size: cover;
-
-
-}
-
+/* ===== Certificate Sections ===== */
 .cer1 {
     float: left;
     width: 50%;
@@ -168,14 +137,9 @@ body {
     float: right;
     width: 50%;
     height: auto;
-
 }
 
-/* Certificate Image Gallery */
-
-
-
-/* Style for the logo link of the links */
+/* ===== Social Media Icons ===== */
 .fa {
     padding: 10px;
     font-size: 20px;
@@ -199,7 +163,6 @@ body {
     color: white;
 }
 
-
 .fa-linkedin {
     background: #007bb5;
     color: white;
@@ -213,43 +176,14 @@ body {
 .fa-instagram {
     background: #e40f24;
     color: white;
-
 }
 
-.spacing {
-    line-height: 4px;
-}
-
-.image {
-    margin-bottom: 30px;
-    align-self: center;
-    padding: auto;
-
-}
-
-/* Font Structure */
-h1 {
-    font-style: italic;
-    /* color: rgb(134, 63, 220); */
-    text-align: center;
-    font-size: 30px;
-}
-
-h2 {
-    color: navy;
+/* ===== Content Sections ===== */
+#p1 {
     text-align: center;
 }
-h3{
-    text-align: center;
-    color: blueviolet;
-}
-
-
-
-/* Section CSS */
 
 #a1 {
-    /* padding: 220px; */
     text-align: justify;
     border-radius: 25px;
     background-color: skyblue;
@@ -260,10 +194,9 @@ h3{
     margin: 10%;
     margin-left: 22%;
     opacity: 0.6;
-    
 }
 
-#a1 p{
+#a1 p {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -271,9 +204,6 @@ h3{
     font-weight: 500;
     font-size: 16px;
     margin-top: 2.5%;
-    /* color: navy; */
-
-
 }
 
 #b1 {
@@ -281,26 +211,22 @@ h3{
     clear: both;
 }
 
-#bor1 {
+/* ===== Border Styles ===== */
+#bor1, #bor2 {
     border-radius: 15px 50px;
     background: #04a5a5;
     padding: 30px;
     width: 25%;
     height: 40%;
-    margin-left: 4%;
     margin-top: 80px;
 }
 
+#bor1 {
+    margin-left: 4%;
+}
+
 #bor2 {
-    border-radius: 15px 50px;
-    background: #04a5a5;
-    /*008080*/
-    padding: 30px;
-    width: 25%;
-    height: 40%;
-    /* margin-left: 5%; */
     margin-right: 4%;
-    margin-top: 80px;
 }
 
 #bor3 {
@@ -328,35 +254,7 @@ h3{
     opacity: 0.8;
 }
 
-
-/* Table Layout css */
-
-
-
-/* Project Gallary */
-div.gallery {
-    margin: 5px;
-    border: 1px solid #ccc;
-    float: left;
-    width: 180px;
-}
-
-div.gallery:hover {
-    border: 1px solid #777;
-}
-
-div.gallery img {
-    width: 100%;
-    height: auto;
-}
-
-div.desc {
-    padding: 15px;
-    text-align: center;
-}
-
-
-/* projects container */
+/* ===== Project Gallery ===== */
 .container {
     display: flex;
     align-items: center;
@@ -365,13 +263,11 @@ div.desc {
     margin-top: 5%;
     height: 60%;
     width: auto;
-    /* border: 2px solid black; */
 }
 
 .box {
     width: 80%;
     height: 80%;
-    /* border: 2px solid rgb(234, 145, 160); */
     margin: 5%;
     border-radius: 30px;
     background-color: #04a5a5;
@@ -387,15 +283,11 @@ div.desc {
     font-size: 32px;
     margin-top: 40%;
     color: white;
-
-
-
 }
 
 .box1 {
     width: 40%;
     height: auto;
-    /* border: 2px solid rgb(234, 145, 160); */
     margin: 3%;
     border-radius: 30px;
     background-color: #80ed99;
@@ -403,10 +295,8 @@ div.desc {
     text-align: justify;
 }
 
-/* Education Detial's Table */
-table,
-th,
-td {
+/* ===== Table Styles ===== */
+table, th, td {
     border: 2px solid black;
     border-radius: 10px;
     border-style: outset;
@@ -418,12 +308,23 @@ td {
     margin-top: 20%;
 }
 
-
-
-/* Footer */
+/* ===== Footer ===== */
 footer {
     text-align: center;
     padding: 2px;
     background-color: #bbcc;
     color: white;
+}
+
+/* ===== Responsive Design ===== */
+@media screen and (max-width: 500px) {
+    .header a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .header-right {
+        float: none;
+    }
 }
