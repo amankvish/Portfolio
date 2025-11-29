@@ -1,19 +1,26 @@
-'use client';
-import { useState, useEffect } from 'react';
-import styles from './Navbar.module.css';
+"use client";
+import { useState, useEffect } from "react";
+import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
-      
+
       // Update active section based on scroll position
-      const sections = ['home', 'about', 'skills', 'experience', 'projects', 'contact'];
-      const current = sections.find(section => {
+      const sections = [
+        "home",
+        "about",
+        "skills",
+        "experience",
+        "projects",
+        "contact",
+      ];
+      const current = sections.find((section) => {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
@@ -24,24 +31,24 @@ export default function Navbar() {
       if (current) setActiveSection(current);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
   const navItems = [
-    { name: 'Home', href: '', icon: '🏠' },
-    { name: 'About', href: '#about', icon: '👨‍💻' },
-    { name: 'Skills', href: '#skills', icon: '⚡' },
-    { name: 'Experience', href: '#experience', icon: '💼' },
-    { name: 'Projects', href: '#projects', icon: '🚀' },
-    { name: 'Contact', href: '#contact', icon: '📧' }
+    { name: "Home", href: "", icon: "🏠" },
+    { name: "About", href: "#about", icon: "👨‍💻" },
+    { name: "Skills", href: "#skills", icon: "⚡" },
+    { name: "Experience", href: "#experience", icon: "💼" },
+    { name: "Projects", href: "#projects", icon: "🚀" },
+    { name: "Contact", href: "#contact", icon: "📧" },
   ];
 
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+    <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.container}>
         {/* Logo Section */}
         <div className={styles.logoSection}>
@@ -53,14 +60,16 @@ export default function Navbar() {
         </div>
 
         {/* Navigation */}
-        <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ''}`}>
+        <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ""}`}>
           <ul className={styles.navList}>
             {navItems.map((item) => (
               <li key={item.name} className={styles.navItem}>
-                <a 
+                <a
                   href={item.href}
                   className={`${styles.navLink} ${
-                    activeSection === item.name.toLowerCase() ? styles.active : ''
+                    activeSection === item.name.toLowerCase()
+                      ? styles.active
+                      : ""
                   }`}
                   onClick={closeMenu}
                 >
@@ -75,15 +84,15 @@ export default function Navbar() {
           {/* CTA Button */}
           <div className={styles.ctaSection}>
             <a href="#contact" className={styles.ctaButton}>
-              <span>Let's Talk</span>
+              <span>Let&apos;s Talk</span>
               <div className={styles.ctaSparkle}>✨</div>
             </a>
           </div>
         </nav>
 
         {/* Mobile Menu Button */}
-        <button 
-          className={`${styles.menuButton} ${isMenuOpen ? styles.active : ''}`}
+        <button
+          className={`${styles.menuButton} ${isMenuOpen ? styles.active : ""}`}
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >

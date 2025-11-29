@@ -1,84 +1,84 @@
-'use client';
-import { useState } from 'react';
-import styles from './Contact.module.css';
+"use client";
+import { useState } from "react";
+import styles from "../styles/Contact.module.css";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState('');
+  const [submitMessage, setSubmitMessage] = useState("");
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
-      setSubmitMessage('🎉 Message sent! I\'ll get back to you soon.');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      
-      setTimeout(() => setSubmitMessage(''), 5000);
+      setSubmitMessage("🎉 Message sent! I'll get back to you soon.");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+
+      setTimeout(() => setSubmitMessage(""), 5000);
     }, 1500);
   };
 
   const contactChannels = [
     {
-      icon: '📧',
-      title: 'Email',
-      value: 'amankvish2@outlook.com',
-      href: 'mailto:amankvish2@outlook.com',
-      color: '#FF6B6B'
+      icon: "📧",
+      title: "Email",
+      value: "amankvish2@outlook.com",
+      href: "mailto:amankvish2@outlook.com",
+      color: "#FF6B6B",
     },
     {
-      icon: '📱',
-      title: 'Phone',
-      value: '+91 8869-948046',
-      href: 'tel:+918869948046',
-      color: '#4ECDC4'
+      icon: "📱",
+      title: "Phone",
+      value: "+91 8869-948046",
+      href: "tel:+918869948046",
+      color: "#4ECDC4",
     },
     {
-      icon: '💻',
-      title: 'GitHub',
-      value: '@amankvish',
-      href: 'https://github.com/amankvish',
+      icon: "💻",
+      title: "GitHub",
+      value: "@amankvish",
+      href: "https://github.com/amankvish",
       external: true,
-      color: '#45B7D1'
+      color: "#45B7D1",
     },
     {
-      icon: '💼',
-      title: 'LinkedIn',
-      value: '/in/amankvish',
-      href: 'https://linkedin.com/in/amankvish',
+      icon: "💼",
+      title: "LinkedIn",
+      value: "/in/amankvish",
+      href: "https://linkedin.com/in/amankvish",
       external: true,
-      color: '#FFA07A'
-    }
+      color: "#FFA07A",
+    },
   ];
 
   return (
     <section id="contact" className={styles.contact}>
       <div className={styles.container}>
-        
         {/* Compact Header */}
         <div className={styles.header}>
           <h2 className={styles.title}>Let's Connect</h2>
-          <p className={styles.subtitle}>Got a project? Let's make it happen!</p>
+          <p className={styles.subtitle}>
+            Got a project? Let's make it happen!
+          </p>
         </div>
 
         {/* Main Content Grid */}
         <div className={styles.content}>
-          
           {/* Contact Channels */}
           <div className={styles.channels}>
             <div className={styles.channelsGrid}>
@@ -89,7 +89,9 @@ export default function Contact() {
                   target={channel.external ? "_blank" : "_self"}
                   rel={channel.external ? "noopener noreferrer" : ""}
                   className={styles.channelCard}
-                  style={{ '--accent-color': channel.color } as React.CSSProperties}
+                  style={
+                    { "--accent-color": channel.color } as React.CSSProperties
+                  }
                 >
                   <div className={styles.channelIcon}>{channel.icon}</div>
                   <div className={styles.channelInfo}>
@@ -114,7 +116,7 @@ export default function Contact() {
               <h3 className={styles.formTitle}>Send a Message</h3>
               <div className={styles.formDecoration}></div>
             </div>
-            
+
             <form onSubmit={handleSubmit} className={styles.form}>
               <div className={styles.inputGroup}>
                 <input
@@ -168,9 +170,11 @@ export default function Contact() {
                 <div className={styles.textareaFocus}></div>
               </div>
 
-              <button 
-                type="submit" 
-                className={`${styles.submitBtn} ${isSubmitting ? styles.loading : ''}`}
+              <button
+                type="submit"
+                className={`${styles.submitBtn} ${
+                  isSubmitting ? styles.loading : ""
+                }`}
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
@@ -187,9 +191,7 @@ export default function Contact() {
               </button>
 
               {submitMessage && (
-                <div className={styles.message}>
-                  {submitMessage}
-                </div>
+                <div className={styles.message}>{submitMessage}</div>
               )}
             </form>
           </div>
