@@ -71,9 +71,9 @@ export default function Contact() {
       <div className={styles.container}>
         {/* Compact Header */}
         <div className={styles.header}>
-          <h2 className={styles.title}>Let's Connect</h2>
+          <h2 className={styles.title}>Let&apos;s Connect</h2>
           <p className={styles.subtitle}>
-            Got a project? Let's make it happen!
+            Got a project? Let&lsquo;s make it happen!
           </p>
         </div>
 
@@ -199,7 +199,7 @@ export default function Contact() {
 
         {/* Quick CTA */}
         <div className={styles.cta}>
-          <p>Let's create something amazing together!</p>
+          <p>Let&apos;s create something amazing together!</p>
           <div className={styles.ctaOrnament}>✨</div>
         </div>
       </div>
