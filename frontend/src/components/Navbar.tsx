@@ -39,7 +39,7 @@ export default function Navbar() {
   const closeMenu = () => setIsMenuOpen(false);
 
   const navItems = [
-    { name: "Home", href: "", icon: "🏠" },
+    { name: "Home", href: "#home", icon: "🏠" },
     { name: "About", href: "#about", icon: "👨‍💻" },
     { name: "Skills", href: "#skills", icon: "⚡" },
     { name: "Experience", href: "#experience", icon: "💼" },

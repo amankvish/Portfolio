@@ -25,7 +25,7 @@ export default function Projects() {
               <div className={styles.cardHeader}>
                 <div className={styles.projectIcon}>🔧</div>
                 <div className={styles.projectInfo}>
-                  <h3>AI Business Automation Suite</h3>
+                  <h3>Business Automation Suite</h3>
                   <div className={styles.techStack}>
                     <span>Zoho Flow</span>
                     <span>WhatsApp API</span>
@@ -33,110 +33,24 @@ export default function Projects() {
                   </div>
                 </div>
               </div>
+
               <p className={styles.projectDesc}>
-                Intelligent lead alerts & CRM automation. Managed 250+
-                alerts/day, reduced manual work by 55%.
+                Built an automation platform for lead handling and CRM updates
+                with AI-driven sentiment replies. Scaled to 250+ triggers/day
+                and reduced manual effort by ~55%.
               </p>
+
               <div className={styles.projectMetrics}>
                 <div className={styles.metric}>
                   <span className={styles.metricValue}>250+</span>
-                  <span className={styles.metricLabel}>Alerts/Day</span>
+                  <span className={styles.metricLabel}>triggers/day</span>
                 </div>
                 <div className={styles.metric}>
                   <span className={styles.metricValue}>55%</span>
-                  <span className={styles.metricLabel}>Efficiency</span>
+                  <span className={styles.metricLabel}>manual reduction</span>
                 </div>
               </div>
-              <button className={styles.viewBtn}>View Details →</button>
-            </div>
 
-            {/* Project 2 */}
-            <div className={styles.projectCard}>
-              <div className={styles.cardHeader}>
-                <div className={styles.projectIcon}>💬</div>
-                <div className={styles.projectInfo}>
-                  <h3>Smart Chat Automation Bot</h3>
-                  <div className={styles.techStack}>
-                    <span>Python</span>
-                    <span>FastAPI</span>
-                    <span>LangChain</span>
-                  </div>
-                </div>
-              </div>
-              <p className={styles.projectDesc}>
-                OpenAI GPT integration for FAQs & webinar responses. Improved
-                lead response rate by 45%.
-              </p>
-              <div className={styles.projectMetrics}>
-                <div className={styles.metric}>
-                  <span className={styles.metricValue}>45%</span>
-                  <span className={styles.metricLabel}>Response Rate</span>
-                </div>
-                <div className={styles.metric}>
-                  <span className={styles.metricValue}>24/7</span>
-                  <span className={styles.metricLabel}>Availability</span>
-                </div>
-              </div>
-              <button className={styles.viewBtn}>View Details →</button>
-            </div>
-
-            {/* Project 3 */}
-            <div className={styles.projectCard}>
-              <div className={styles.cardHeader}>
-                <div className={styles.projectIcon}>🌍</div>
-                <div className={styles.projectInfo}>
-                  <h3>Weather & AQI IoT System</h3>
-                  <div className={styles.techStack}>
-                    <span>IoT</span>
-                    <span>Python ML</span>
-                    <span>XGBoost</span>
-                  </div>
-                </div>
-              </div>
-              <p className={styles.projectDesc}>
-                Real-time AQI monitoring with ML predictions and data
-                visualization dashboard.
-              </p>
-              <div className={styles.projectMetrics}>
-                <div className={styles.metric}>
-                  <span className={styles.metricValue}>Real-time</span>
-                  <span className={styles.metricLabel}>Monitoring</span>
-                </div>
-                <div className={styles.metric}>
-                  <span className={styles.metricValue}>ML</span>
-                  <span className={styles.metricLabel}>Powered</span>
-                </div>
-              </div>
-              <button className={styles.viewBtn}>View Details →</button>
-            </div>
-
-            {/* Project 4 */}
-            <div className={styles.projectCard}>
-              <div className={styles.cardHeader}>
-                <div className={styles.projectIcon}>🎬</div>
-                <div className={styles.projectInfo}>
-                  <h3>Movie Recommendation System</h3>
-                  <div className={styles.techStack}>
-                    <span>Streamlit</span>
-                    <span>Python ML</span>
-                    <span>Pickle</span>
-                  </div>
-                </div>
-              </div>
-              <p className={styles.projectDesc}>
-                Hybrid recommendation engine with interactive UI for
-                content-based filtering.
-              </p>
-              <div className={styles.projectMetrics}>
-                <div className={styles.metric}>
-                  <span className={styles.metricValue}>Hybrid</span>
-                  <span className={styles.metricLabel}>Algorithm</span>
-                </div>
-                <div className={styles.metric}>
-                  <span className={styles.metricValue}>Interactive</span>
-                  <span className={styles.metricLabel}>UI</span>
-                </div>
-              </div>
               <button className={styles.viewBtn}>View Details →</button>
             </div>
 
@@ -153,50 +67,125 @@ export default function Projects() {
                   </div>
                 </div>
               </div>
+
               <p className={styles.projectDesc}>
-                Full-stack eCommerce with cart, auth, and analytics. REST API
-                integration.
+                Full-stack eCommerce platform with JWT auth, cart & order flows,
+                admin dashboard and secure REST APIs.
               </p>
+
               <div className={styles.projectMetrics}>
                 <div className={styles.metric}>
                   <span className={styles.metricValue}>Full-stack</span>
-                  <span className={styles.metricLabel}>Development</span>
+                  <span className={styles.metricLabel}>development</span>
                 </div>
                 <div className={styles.metric}>
-                  <span className={styles.metricValue}>E-commerce</span>
-                  <span className={styles.metricLabel}>Platform</span>
+                  <span className={styles.metricValue}>Secure</span>
+                  <span className={styles.metricLabel}>API design</span>
                 </div>
               </div>
+
               <button className={styles.viewBtn}>View Details →</button>
             </div>
 
-            {/* Project 6 */}
+            {/* Project 3 */}
+            <div className={styles.projectCard}>
+              <div className={styles.cardHeader}>
+                <div className={styles.projectIcon}>🌍</div>
+                <div className={styles.projectInfo}>
+                  <h3>Weather & AQI IoT System</h3>
+                  <div className={styles.techStack}>
+                    <span>IoT</span>
+                    <span>Python</span>
+                    <span>XGBoost</span>
+                  </div>
+                </div>
+              </div>
+
+              <p className={styles.projectDesc}>
+                End-to-end IoT solution for AQI monitoring: sensor ingestion, ML
+                models (XGBoost / SVM / RF) and real-time dashboards for web and
+                mobile.
+              </p>
+
+              <div className={styles.projectMetrics}>
+                <div className={styles.metric}>
+                  <span className={styles.metricValue}>Real-time</span>
+                  <span className={styles.metricLabel}>monitoring</span>
+                </div>
+                <div className={styles.metric}>
+                  <span className={styles.metricValue}>ML</span>
+                  <span className={styles.metricLabel}>predictions</span>
+                </div>
+              </div>
+
+              <button className={styles.viewBtn}>View Details →</button>
+            </div>
+
+            {/* Project 4 */}
             <div className={styles.projectCard}>
               <div className={styles.cardHeader}>
                 <div className={styles.projectIcon}>⚡</div>
                 <div className={styles.projectInfo}>
-                  <h3>Advanced Weather Station</h3>
+                  <h3>EVsol — EV Charging Locator</h3>
                   <div className={styles.techStack}>
-                    <span>IoT</span>
-                    <span>Python</span>
-                    <span>ML Models</span>
+                    <span>Java</span>
+                    <span>Google Maps API</span>
+                    <span>Android</span>
                   </div>
                 </div>
               </div>
+
               <p className={styles.projectDesc}>
-                IoT-based AQI monitoring with XGBoost, SVM models and real-time
-                dashboards.
+                Android app to discover nearby EV chargers, provide navigation
+                and optimized routing. Built with Google Maps integration (Feb
+                2023 – May 2023).
               </p>
+
               <div className={styles.projectMetrics}>
                 <div className={styles.metric}>
-                  <span className={styles.metricValue}>ML Models</span>
-                  <span className={styles.metricLabel}>XGBoost/SVM</span>
+                  <span className={styles.metricValue}>Routing</span>
+                  <span className={styles.metricLabel}>optimizations</span>
                 </div>
                 <div className={styles.metric}>
-                  <span className={styles.metricValue}>Real-time</span>
-                  <span className={styles.metricLabel}>Dashboard</span>
+                  <span className={styles.metricValue}>Live</span>
+                  <span className={styles.metricLabel}>charger status</span>
                 </div>
               </div>
+
+              <button className={styles.viewBtn}>View Details →</button>
+            </div>
+
+            {/* Project 2 */}
+            <div className={styles.projectCard}>
+              <div className={styles.cardHeader}>
+                <div className={styles.projectIcon}>💬</div>
+                <div className={styles.projectInfo}>
+                  <h3>Smart Chat Automation Bot</h3>
+                  <div className={styles.techStack}>
+                    <span>Python</span>
+                    <span>FastAPI</span>
+                    <span>LangChain</span>
+                  </div>
+                </div>
+              </div>
+
+              <p className={styles.projectDesc}>
+                Integrated GPT-based assistants for FAQs and webinar follow-ups.
+                Improved lead response and maintained round-the-clock
+                availability.
+              </p>
+
+              <div className={styles.projectMetrics}>
+                <div className={styles.metric}>
+                  <span className={styles.metricValue}>45%</span>
+                  <span className={styles.metricLabel}>improved replies</span>
+                </div>
+                <div className={styles.metric}>
+                  <span className={styles.metricValue}>24/7</span>
+                  <span className={styles.metricLabel}>availability</span>
+                </div>
+              </div>
+
               <button className={styles.viewBtn}>View Details →</button>
             </div>
           </div>
