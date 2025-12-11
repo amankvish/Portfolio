@@ -1,6 +1,6 @@
-'use client';
-import { useState, useEffect } from 'react';
-import styles from './Footer.module.css';
+"use client";
+import { useState, useEffect } from "react";
+import styles from "./Footer.module.css";
 
 export default function Footer() {
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -11,36 +11,46 @@ export default function Footer() {
       setShowBackToTop(window.scrollY > 500);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const footerLinks = [
-    { name: 'Home', href: '#home', icon: '🏠' },
-    { name: 'About', href: '#about', icon: '👨‍💻' },
-    { name: 'Skills', href: '#skills', icon: '⚡' },
-    { name: 'Projects', href: '#projects', icon: '🚀' },
-    { name: 'Contact', href: '#contact', icon: '📧' }
+    { name: "Home", href: "#home", icon: "🏠" },
+    { name: "About", href: "#about", icon: "👨‍💻" },
+    { name: "Skills", href: "#skills", icon: "⚡" },
+    { name: "Projects", href: "#projects", icon: "🚀" },
+    { name: "Contact", href: "#contact", icon: "📧" },
   ];
 
   const socialLinks = [
-    { href: "https://github.com/amankvish", icon: "fab fa-github", label: "GitHub" },
-    { href: "https://www.linkedin.com/in/amankvish/", icon: "fab fa-linkedin", label: "LinkedIn" },
-    { href: "mailto:amankvish2@outlook.com", icon: "fas fa-envelope", label: "Email" }
+    {
+      href: "https://github.com/amankvish",
+      icon: "fab fa-github",
+      label: "GitHub",
+    },
+    {
+      href: "https://www.linkedin.com/in/amankvish/",
+      icon: "fab fa-linkedin",
+      label: "LinkedIn",
+    },
+    {
+      href: "mailto:amankvish2@outlook.com",
+      icon: "fas fa-envelope",
+      label: "Email",
+    },
   ];
 
   return (
     <>
       <footer className={styles.footer}>
         <div className={styles.container}>
-          
           {/* Main Footer Content - Horizontal Layout */}
           <div className={styles.footerMain}>
-            
             {/* Brand & Description */}
             <div className={styles.brandSection}>
               <div className={styles.logoGroup}>
@@ -51,7 +61,7 @@ export default function Footer() {
                 <div className={styles.brandInfo}>
                   <h3 className={styles.brandName}>Aman Vishwakarma</h3>
                   <p className={styles.brandTagline}>
-                    Full Stack Developer & Tech Enthusiast
+                    Software Developer & Tech Enthusiast
                   </p>
                 </div>
               </div>
@@ -61,7 +71,11 @@ export default function Footer() {
             <div className={styles.navSection}>
               <nav className={styles.footerNav}>
                 {footerLinks.map((link) => (
-                  <a key={link.name} href={link.href} className={styles.navLink}>
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className={styles.navLink}
+                  >
                     <span className={styles.linkIcon}>{link.icon}</span>
                     <span className={styles.linkText}>{link.name}</span>
                   </a>
@@ -85,12 +99,14 @@ export default function Footer() {
                   </a>
                 ))}
               </div>
-              <a href="mailto:amankvish2@outlook.com" className={styles.ctaButton}>
-                Let's Connect
+              <a
+                href="mailto:amankvish2@outlook.com"
+                className={styles.ctaButton}
+              >
+                Let&apos;s Connect
                 <span className={styles.ctaArrow}>→</span>
               </a>
             </div>
-
           </div>
 
           {/* Footer Bottom */}
@@ -107,18 +123,24 @@ export default function Footer() {
               </div>
             </div>
           </div>
-
         </div>
       </footer>
 
       {/* Back to Top Button */}
-      <button 
-        className={`${styles.backToTop} ${showBackToTop ? styles.active : ''}`}
+      <button
+        className={`${styles.backToTop} ${showBackToTop ? styles.active : ""}`}
         onClick={scrollToTop}
         aria-label="Back to top"
       >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M18 15l-6-6-6 6"/>
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
+          <path d="M18 15l-6-6-6 6" />
         </svg>
       </button>
     </>

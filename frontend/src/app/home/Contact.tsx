@@ -1,41 +1,17 @@
 "use client";
-import { useState } from "react";
+
+import React, { JSX } from "react";
 import styles from "../styles/Contact.module.css";
 
-export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState("");
+/**
+ * Contact.tsx
+ * - Centered contact / channels section (NO profile card)
+ * - Whatsapp entry uses wa.me (international no. without +)
+ * - Place resume file at /public/resume.pdf or change resumeHref below
+ */
 
-  // ✔ FIX 1: Add proper typing for the change event
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  // ✔ FIX 2: Add type for form submit event
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitMessage("🎉 Message sent! I'll get back to you soon.");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-
-      setTimeout(() => setSubmitMessage(""), 5000);
-    }, 1500);
-  };
+export default function Contact(): JSX.Element {
+  // Replace with your resume path if needed (e.g. "/resume.pdf" or an external URL)
 
   const contactChannels = [
     {
@@ -44,167 +20,123 @@ export default function Contact() {
       value: "amankvish2@outlook.com",
       href: "mailto:amankvish2@outlook.com",
       color: "#FF6B6B",
+      external: false,
     },
     {
-      icon: "📱",
-      title: "Phone",
-      value: "+91 8869-948046",
-      href: "tel:+918869948046",
-      color: "#4ECDC4",
+      icon: "💬",
+      title: "Call or WhatsApp",
+      value: "+91 8869 948046",
+      // international format without + (India example)
+      href: "https://wa.me/918869948046?text=Hi%20Aman%2C%20I%27d%20like%20to%20discuss%20a%20project",
+      color: "#25D366",
+      external: true,
     },
     {
       icon: "💻",
       title: "GitHub",
       value: "@amankvish",
       href: "https://github.com/amankvish",
-      external: true,
       color: "#45B7D1",
+      external: true,
     },
     {
       icon: "💼",
       title: "LinkedIn",
-      value: "/in/amankvish",
+      value: "Aman Vishwakarma",
       href: "https://linkedin.com/in/amankvish",
+      color: "#0077B5",
       external: true,
-      color: "#FFA07A",
     },
   ];
 
   return (
-    <section id="contact" className={styles.contact}>
+    <section
+      id="contact"
+      className={styles.contact}
+      aria-labelledby="contact-heading"
+    >
       <div className={styles.container}>
-        {/* Compact Header */}
-        <div className={styles.header}>
-          <h2 className={styles.title}>Let&apos;s Connect</h2>
+        {/* Header */}
+        <header className={styles.header}>
+          <h2 id="contact-heading" className={styles.title}>
+            Let&apos;s Connect
+          </h2>
           <p className={styles.subtitle}>
-            Got a project? Let&lsquo;s make it happen!
+            Have an idea or a project? I’ll help you build it—fast & reliable.
           </p>
-        </div>
+        </header>
 
-        {/* Main Content Grid */}
-        <div className={styles.content}>
-          {/* Contact Channels */}
-          <div className={styles.channels}>
-            <div className={styles.channelsGrid}>
-              {contactChannels.map((channel, index) => (
-                <a
-                  key={index}
-                  href={channel.href}
-                  target={channel.external ? "_blank" : "_self"}
-                  rel={channel.external ? "noopener noreferrer" : ""}
-                  className={styles.channelCard}
-                  style={
-                    { "--accent-color": channel.color } as React.CSSProperties
-                  }
-                >
-                  <div className={styles.channelIcon}>{channel.icon}</div>
-                  <div className={styles.channelInfo}>
-                    <span className={styles.channelTitle}>{channel.title}</span>
-                    <span className={styles.channelValue}>{channel.value}</span>
-                  </div>
-                  <div className={styles.channelHover}></div>
-                </a>
-              ))}
-            </div>
-
-            {/* Quick Status */}
-            <div className={styles.status}>
-              <div className={styles.statusDot}></div>
-              <span>Available for new projects</span>
-            </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className={styles.formSection}>
-            <div className={styles.formHeader}>
-              <h3 className={styles.formTitle}>Send a Message</h3>
-              <div className={styles.formDecoration}></div>
-            </div>
-
-            <form onSubmit={handleSubmit} className={styles.form}>
-              <div className={styles.inputGroup}>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Your Name"
-                  className={styles.input}
-                  required
-                />
-                <div className={styles.inputFocus}></div>
-              </div>
-
-              <div className={styles.inputGroup}>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="your.email@example.com"
-                  className={styles.input}
-                  required
-                />
-                <div className={styles.inputFocus}></div>
-              </div>
-
-              <div className={styles.inputGroup}>
-                <input
-                  type="text"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  placeholder="Project Discussion"
-                  className={styles.input}
-                  required
-                />
-                <div className={styles.inputFocus}></div>
-              </div>
-
-              <div className={styles.inputGroup}>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Tell me about your project..."
-                  className={styles.textarea}
-                  rows={4}
-                  required
-                ></textarea>
-                <div className={styles.textareaFocus}></div>
-              </div>
-
-              <button
-                type="submit"
-                className={`${styles.submitBtn} ${
-                  isSubmitting ? styles.loading : ""
-                }`}
-                disabled={isSubmitting}
+        {/* Centered channel grid + resume CTA */}
+        <div className={styles.centerPanel}>
+          {/* Channels grid */}
+          <div
+            className={styles.channelsGrid}
+            role="list"
+            aria-label="Contact channels"
+          >
+            {contactChannels.map((ch, idx) => (
+              <a
+                key={idx}
+                role="listitem"
+                className={styles.channelCard}
+                href={ch.href}
+                target={ch.external ? "_blank" : "_self"}
+                rel={ch.external ? "noopener noreferrer" : undefined}
+                style={
+                  {
+                    "--accent-color": ch.color,
+                  } as React.CSSProperties
+                }
               >
-                {isSubmitting ? (
-                  <>
-                    <div className={styles.btnSpinner}></div>
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    Send Message
-                    <span className={styles.btnArrow}>🚀</span>
-                  </>
-                )}
-              </button>
+                <div className={styles.channelIcon} aria-hidden>
+                  {ch.icon}
+                </div>
 
-              {submitMessage && (
-                <div className={styles.message}>{submitMessage}</div>
-              )}
-            </form>
+                <div className={styles.channelInfo}>
+                  <span className={styles.channelTitle}>{ch.title}</span>
+                  <span className={styles.channelValue}>{ch.value}</span>
+                </div>
+
+                <div className={styles.channelHover} aria-hidden />
+              </a>
+            ))}
+          </div>
+
+          {/* Resume call-to-action (centered under cards) */}
+
+          {/* <div className={styles.resumeRow}>
+            <a
+              className={styles.resumeBtn}
+              href={resumeHref}
+              download
+              aria-label="Download resume"
+            >
+              Download resume
+            </a>
+            <button
+              className={styles.messageBtn}
+              onClick={() =>
+                window.open(
+                  "https://wa.me/918869948046?text=Hi%20Aman%2C%20I%27d%20like%20to%20discuss%20a%20project",
+                  "_blank"
+                )
+              }
+              aria-label="Message on WhatsApp"
+            >
+              Message on WhatsApp
+            </button>
+          </div> */}
+
+          {/* Availability */}
+          <div className={styles.status}>
+            <div className={styles.statusDot} />
+            <span>Available for new projects</span>
           </div>
         </div>
 
-        {/* Quick CTA */}
+        {/* CTA footer */}
         <div className={styles.cta}>
-          <p>Let&apos;s create something amazing together!</p>
-          <div className={styles.ctaOrnament}>✨</div>
+          <p>Let&apos;s create something amazing together ✨</p>
         </div>
       </div>
     </section>
